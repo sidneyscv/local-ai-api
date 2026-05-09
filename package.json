@@ -1,0 +1,20 @@
+{
+  "name": "local-ai-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "setup": "powershell -NoProfile -ExecutionPolicy Bypass -File ./setup-local-ai.ps1",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "openai": "^6.35.0"
+  }
+}

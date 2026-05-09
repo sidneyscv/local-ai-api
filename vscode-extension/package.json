@@ -1,0 +1,94 @@
+{
+  "name": "local-ai-api-vscode",
+  "displayName": "Local AI IDE",
+  "description": "IDE local com chat, workspaces e agente de codificação para a Local AI API.",
+  "version": "0.0.1",
+  "publisher": "seu-nome",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "capabilities": {
+    "virtualWorkspaces": {
+      "supported": false,
+      "description": "A Local AI API executa servidor Node local e opera em arquivos do disco."
+    }
+  },
+  "activationEvents": [
+    "onCommand:local-ai-api.openPanel",
+    "onCommand:local-ai-api.openIde",
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "local-ai-api.openPanel",
+        "title": "Local AI IDE: Abrir IDE"
+      },
+      {
+        "command": "local-ai-api.openIde",
+        "title": "Local AI IDE: Abrir IDE"
+      },
+      {
+        "command": "local-ai-api.startApi",
+        "title": "Local AI IDE: Iniciar API Local"
+      },
+      {
+        "command": "local-ai-api.stopApi",
+        "title": "Local AI IDE: Parar API Local"
+      },
+      {
+        "command": "local-ai-api.runAgent",
+        "title": "Local AI IDE: Executar Agente"
+      },
+      {
+        "command": "local-ai-api.createWorkspace",
+        "title": "Local AI IDE: Criar Workspace"
+      },
+      {
+        "command": "local-ai-api.openWorkspace",
+        "title": "Local AI IDE: Abrir Workspace"
+      }
+    ],
+    "configuration": {
+      "title": "Local AI IDE",
+      "properties": {
+        "localAiApi.projectRoot": {
+          "type": "string",
+          "default": "",
+          "description": "Caminho da raiz do projeto Local AI API que contem server.js. Vazio usa autodeteccao."
+        },
+        "localAiApi.apiUrl": {
+          "type": "string",
+          "default": "",
+          "description": "URL base da API local. Vazio usa a porta definida no .env do projeto."
+        },
+        "localAiApi.autoStart": {
+          "type": "boolean",
+          "default": false,
+          "description": "Iniciar a API automaticamente quando a extensao for ativada."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "echo \"No tests configured\" && exit 0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.18",
+    "@types/node-fetch": "^2.6.5",
+    "typescript": "^5.6.2",
+    "vscode": "^1.1.37"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
