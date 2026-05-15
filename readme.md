@@ -1,381 +1,153 @@
-# 🚀 Local AI Agent
+# LOCAL-AI-API
 
-Uma IDE orientada por agente para o VS Code.
+## Overview
 
-O projeto transforma o VS Code em um ambiente inteligente de desenvolvimento assistido, utilizando:
+LOCAL-AI-API is a modular platform focused on:
 
-* ChatGPT Go,
-* GitHub Copilot,
-* Codex,
-* execução local segura,
-* gerenciamento automático de workspaces,
-* automação de arquivos,
-* terminal integrado,
-* preview e rollback.
+- AI agents
+- Workspace management
+- Local and cloud AI integration
+- API orchestration
+- Automation pipelines
+- Developer productivity
 
-O foco do projeto NÃO é criar um modelo de IA local.
+The project is designed to support:
 
-O foco é construir:
-
-# 👉 um orquestrador inteligente de desenvolvimento dentro do VS Code.
-
----
-
-# ✨ Objetivo
-
-Construir uma extensão VS Code capaz de:
-
-* criar projetos completos,
-* gerar estrutura de pastas,
-* criar e modificar arquivos,
-* executar comandos,
-* automatizar desenvolvimento,
-* gerenciar workspaces,
-* trabalhar com prompts inteligentes,
-* integrar ChatGPT Go ao fluxo de desenvolvimento.
-
-Tudo isso:
-
-* localmente,
-* com baixo consumo de recursos,
-* sem necessidade de modelos locais pesados.
+- OpenAI
+- Ollama
+- OpenRouter
+- Local LLMs
+- Multi-provider AI systems
 
 ---
 
-# 🧠 Filosofia do projeto
+# Architecture
 
-O projeto NÃO pretende competir com modelos de IA.
+\\\
+apps/
+ ├── api/
+ ├── web/
+ └── desktop/
 
-O diferencial é:
+packages/
+ ├── shared/
+ ├── ai-core/
+ ├── ui/
+ └── database/
 
-# 👉 o ambiente inteligente de execução.
+configs/
+ ├── eslint/
+ ├── typescript/
+ └── docker/
 
-O sistema atua como:
+scripts/
+ ├── setup.ps1
+ ├── dev.ps1
+ └── build.ps1
 
-* executor,
-* workspace manager,
-* prompt engine,
-* diff engine,
-* rollback system,
-* terminal orchestrator.
-
-A IA pode vir de:
-
-* ChatGPT Go,
-* GitHub Copilot,
-* Codex,
-* modelos externos.
-
----
-
-# 🧠 Arquitetura
-
-```txt
-VSCode Extension
-        ↓
-Workspace Manager
-        ↓
-Prompt Builder
-        ↓
-Planner / Validator
-        ↓
-Executor Local
-        ↓
-Workspace
-```
+docs/
+ ├── architecture.md
+ ├── roadmap.md
+ └── api.md
+\\\
 
 ---
 
-# 🔥 Funcionalidades atuais
+# Features
 
-## ✅ Backend Express
-
-* API REST local
-* gerenciamento de workspaces
-* leitura de arquivos
-* análise automática de projetos
-* geração de contexto inteligente
-* preview de ações
-* snapshots automáticos
-* rollback
-
----
-
-## ✅ Agente executor
-
-O sistema já suporta:
-
-* create_file
-* patch_file
-* delete_file
-* rename_file
-* create_folder
-* run_command
+- Modular monorepo
+- AI provider abstraction
+- Workspace manager
+- Agent orchestration
+- REST APIs
+- Plugin-ready architecture
+- Desktop integration
+- Web frontend
+- Docker-ready environment
 
 ---
 
-## ✅ Segurança
+# Technology Stack
 
-Implementações atuais:
+## Backend
+- Node.js
+- TypeScript
+- Express/Fastify
 
-* proteção contra path traversal
-* sandbox por workspace
-* whitelist de comandos
-* bloqueio de operadores perigosos
-* snapshots automáticos
-* preview obrigatório
+## Frontend
+- React
+- Vite
+- TailwindCSS
 
----
+## AI
+- OpenAI
+- Ollama
+- OpenRouter
 
-## ✅ Contexto inteligente
+## Database
+- MySQL
+- PostgreSQL
+- SQLite
 
-O sistema:
-
-* detecta arquivos relevantes,
-* extrai imports,
-* reduz consumo de tokens,
-* evita enviar projetos inteiros,
-* prepara prompts inteligentes.
-
----
-
-## ✅ VSCode Extension
-
-Estrutura inicial implementada:
-
-* sidebar
-* webview
-* integração backend
-* painel de prompt
-* comunicação com agente
+## DevOps
+- Docker
+- GitHub Actions
 
 ---
 
-# 🚀 Fluxo do sistema
+# Setup
 
-```txt
-Usuário escreve prompt
-        ↓
-Extensão gera contexto inteligente
-        ↓
-Prompt Builder monta instrução
-        ↓
-Usuário usa ChatGPT Go/Codex
-        ↓
-Plano retorna para extensão
-        ↓
-Executor aplica mudanças
-        ↓
-Preview + Diff + Rollback
-```
+## Clone repository
 
----
-
-# 📁 Estrutura do projeto
-
-```txt
-local-ai-api/
-│
-├── agent/
-├── public/
-├── vscode-extension/
-├── workspaces/
-├── snapshots/
-├── logs/
-├── GPT.config/
-├── server.js
-├── utils.js
-└── package.json
-```
-
----
-
-# ⚡ Instalação
-
-## 1. Clone o projeto
-
-```bash
+\\\ash
 git clone https://github.com/sidneyscv/local-ai-api.git
-```
+\\\
+
+## Install dependencies
+
+\\\powershell
+./scripts/setup.ps1
+\\\
+
+## Start development
+
+\\\powershell
+./scripts/dev.ps1
+\\\
 
 ---
 
-## 2. Entre na pasta
+# Environment Variables
 
-```bash
-cd local-ai-api
-```
+Copy:
 
----
-
-## 3. Instale dependências
-
-```bash
-npm install
-```
-
----
-
-## 4. Inicie servidor
-
-```bash
-npm start
-```
-
----
-
-# 🌐 Objetivo da extensão VSCode
-
-A extensão deverá funcionar como:
-
-# 👉 uma IDE assistida por agente.
-
-Com:
-
-* prompt inteligente,
-* criação automática de projetos,
-* gerenciamento de workspaces,
-* preview visual,
-* terminal integrado,
-* rollback,
-* logs,
-* snapshots,
-* automação de código.
-
----
-
-# 🔍 Tecnologias utilizadas
-
-## Backend
-
-* Node.js
-* Express
-* OpenAI SDK
-
----
-
-## VSCode Extension
-
-* TypeScript
-* VSCode API
-* Webview API
-
----
-
-# 🔐 Segurança
-
-O projeto implementa:
-
-* sandbox por workspace,
-* validação de paths,
-* whitelist de comandos,
-* preview obrigatório,
-* snapshots automáticos,
-* rollback.
-
----
-
-# 🚀 Roadmap
-
-## Backend
-
-* [ ] Modularização completa
-* [ ] Serviços separados
-* [ ] Sistema de jobs
-* [ ] Streaming em tempo real
-* [ ] AST parsing
-* [ ] Diff engine avançado
-
----
-
-## VSCode
-
-* [ ] Sidebar completa
-* [ ] Histórico visual
-* [ ] Logs em tempo real
-* [ ] Preview interativo
-* [ ] Aprovação de execução
-* [ ] Painel de workspaces
-
----
-
-## Inteligência
-
-* [ ] Prompt Builder avançado
-* [ ] Contexto semântico
-* [ ] Planejamento multi-step
-* [ ] Auto-fix
-* [ ] Integração Git avançada
-
----
-
-# 📌 Visão futura
-
-O objetivo do projeto é evoluir para:
-
-# 👉 uma plataforma pessoal de desenvolvimento assistido por IA
-
-integrada ao VS Code.
-
-Sem depender de:
-
-* GPUs,
-* modelos locais gigantes,
-* infraestrutura pesada.
-
-O foco será:
-
-* automação segura,
-* velocidade,
-* produtividade,
-* execução local,
-* experiência semelhante a Cursor/Codex.
-
----
-
-# ⚠️ Importante
-
-Nunca envie para o GitHub:
-
-* `.env`
-* API keys
-* tokens
-* segredos
-
-Use sempre:
-
-```txt
+\\\
 .env.example
-```
+\\\
+
+to:
+
+\\\
+.env
+\\\
+
+and configure your API keys.
 
 ---
 
-# 📄 Licença
+# Vision
 
-MIT
+The project aims to become a complete AI workspace platform capable of:
 
----
-
-# 🙌 Contribuição
-
-Contribuições são bem-vindas.
-
-Especialmente em:
-
-* modularização,
-* segurança,
-* UX,
-* VSCode integration,
-* diff engine,
-* parsing inteligente,
-* automação.
+- creating projects automatically
+- orchestrating AI agents
+- managing code workspaces
+- generating APIs
+- automating developer workflows
+- integrating local and cloud AI models
 
 ---
 
-# ⭐ Status do projeto
+# License
 
-🚧 Em desenvolvimento ativo.
-
-A arquitetura principal do agente já está funcional e em evolução contínua.
-
-Mas a arquitetura principal do agente já está funcional e em evolução contínua.
+MIT License
