@@ -1,20 +1,27 @@
 {
-  "name": "local-ai-api",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "local-ai-agent",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "setup": "powershell -NoProfile -ExecutionPolicy Bypass -File ./setup-local-ai.ps1",
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsx apps/api/src/server.ts",
+    "start": "tsx apps/api/src/server.ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "module",
   "dependencies": {
-    "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "openai": "^6.35.0"
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.8.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "nodemon": "^3.1.14",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.22.0",
+    "typescript": "^6.0.3"
   }
 }

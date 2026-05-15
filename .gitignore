@@ -1,57 +1,7 @@
-# Node
 node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Environment
-.env
-.env.local
-.env.*.local
-
-# Logs
-logs/
-*.log
-
-# Build
 dist/
-build/
-coverage/
-
-# VSCode
-.vscode/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Temporary
-tmp/
-temp/
-
-# AI / Models
-models/
-checkpoints/
-
-# Python
-__pycache__/
-*.pyc
-
-# PHP
-vendor/
-
-# Docker
-.docker/
-
-# Misc
-*.bak
-*.swp
-# Build outputs
-out/
-*.zip
-
-# Workspaces
+.env
+logs/
 workspaces/
-
-# VSCode extension build
-vscode-extension/out/
+snapshots/
+*.zip
